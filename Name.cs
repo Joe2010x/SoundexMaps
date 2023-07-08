@@ -36,6 +36,12 @@ namespace SoundexMap
             return new Name (Initial + result);
         }
 
+        public Name EndingZero ()
+        {
+            if (_name.Length <=3) return new Name(_name+"0");
+            return new Name(_name);
+        }
+
         public override string ToString()
         {
             return _name;
