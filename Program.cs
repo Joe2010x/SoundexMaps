@@ -17,12 +17,15 @@ namespace SoundexMap
         }
         static void Main(string[] args)
         {
-            var name1 = "Jackson";
+            //var name1 = "Jackson";
             var name2 = "Jaxen";
-            //var result = SoundexMap(name1);
-            var name = new Name (name1);
-            //Console.WriteLine(name1 +" convert to sound maps figure is: "+ result);
-            Console.WriteLine(name.Initial +" "+ name.Remains+ " " + name.RemoveConsecutiveConsonants().RemoveAllVowels());
+            var name = new Name (name2);
+            Console.WriteLine(name.Initial + name.Remains+ " " + name
+            .RemoveConsecutiveConsonants()
+            .RemoveAllVowels()
+            .ReplaceByDigits()
+            .EndingZero()
+            .ToString());
         }
     }
 }

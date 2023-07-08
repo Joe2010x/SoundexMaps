@@ -36,9 +36,33 @@ namespace SoundexMap
             return new Name (Initial + result);
         }
 
+        public Name ReplaceByDigits ()
+        {
+            var case1 = "bfpv";
+            var case2 = "cgjkqsxz";
+            var case3 = "df";
+            var case4 = "l";
+            var case5 = "mn";
+            var case6 = "r";
+            var result = "";
+            foreach (var item in Remains)
+            {
+                if (case1.Contains(item)) result+= 1;
+                if (case2.Contains(item)) result+= 2;
+                if (case3.Contains(item)) result+= 3;
+                if (case4.Contains(item)) result+= 4;
+                if (case5.Contains(item)) result+= 5;
+                if (case6.Contains(item)) result+= 6;
+               
+            }
+            // Console.WriteLine("before replace By Digitits "+Initial+" "+Remains);
+            return new Name (Initial+result);
+        }
+
         public Name EndingZero ()
         {
-            if (_name.Length <=3) return new Name(_name+"0");
+            while (_name.Length<=3)
+                _name += "0";
             return new Name(_name);
         }
 
