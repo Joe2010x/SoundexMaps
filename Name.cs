@@ -55,7 +55,6 @@ namespace SoundexMap
                 if (case6.Contains(item)) result+= 6;
                
             }
-            // Console.WriteLine("before replace By Digitits "+Initial+" "+Remains);
             return new Name (Initial+result);
         }
 
